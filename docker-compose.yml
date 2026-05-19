@@ -26,7 +26,7 @@ services:
       DATABASE_URL: postgres://sppr_user:sppr_password@postgres:5432/sppr_db?sslmode=disable
       FRONTEND_ORIGIN: http://localhost:5173
     ports:
-      - "8080:8080"
+      - "${BACKEND_HOST_PORT:-18080}:8080"
     depends_on:
       postgres:
         condition: service_healthy
